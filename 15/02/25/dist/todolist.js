@@ -23,6 +23,10 @@ function addListItem(task) {
     var item = document.createElement('li');
     var label = document.createElement('label');
     var checkbox = document.createElement('input');
+    checkbox.addEventListener('change', function () {
+        task.completed = checkbox.checked;
+        console.log(tasks);
+    });
     checkbox.type = 'checkbox';
     checkbox.checked = task.completed;
     label.append(checkbox, task.title);
