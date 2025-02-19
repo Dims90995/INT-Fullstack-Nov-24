@@ -1,4 +1,4 @@
-import { addTodo } from "./model.js";
+import { addTodo, toggleTodo } from "./model.js";
 
 export function onAddTodoSubmit(formData: FormData) {
     const rawContent = formData.get("content");
@@ -19,4 +19,8 @@ export function onAddTodoSubmit(formData: FormData) {
         status: "Pending",
         content,
     });
+}
+
+export function onToggleTodoClick(todoId: string) {
+    toggleTodo(todoId);
 }
